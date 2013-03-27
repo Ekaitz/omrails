@@ -67,4 +67,14 @@ Omrails::Application.configure do
 
   # In production, :host should be set to the actual host of your application.
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+# Paperclip should use Amazon S3 on Heroku
+config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['AWS_BUCKET'],
+      :access_key_id => "AKIAI3I4GEKCEWXWWCDQ",
+      :secret_access_key => "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"
+    }
+  }
 end

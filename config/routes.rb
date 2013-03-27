@@ -6,6 +6,8 @@ Omrails::Application.routes.draw do
 
   get 'about' => 'pages#about'
 
+  get 'users' => 'pages#users'
+
   root :to => 'pins#index'
 
   # The priority is based upon order of creation:
