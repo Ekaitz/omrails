@@ -71,6 +71,7 @@ class PinsController < ApplicationController
     end
   end
 
+
   # DELETE /pins/1
   # DELETE /pins/1.json
   def destroy

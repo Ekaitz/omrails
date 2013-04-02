@@ -5,4 +5,5 @@ class PagesController < ApplicationController
   end
   def prove
   end
+   
 end
