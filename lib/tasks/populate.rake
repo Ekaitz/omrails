@@ -1,4 +1,5 @@
-namespace :db do 
+namespace :db do
+=begin
 	desc "Fill database with sample data"
 	task populate: environment do
 		10.times do |n|
@@ -21,4 +22,5 @@ namespace :db do
 			end
 		end
 	end
+=end
 end
