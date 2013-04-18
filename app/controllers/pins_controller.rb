@@ -4,12 +4,10 @@ class PinsController < ApplicationController
   # GET /pins
   # GET /pins.json
   def index
-    @pins = Pin.order("created_at desc").page(params[:page]).per_page(2)
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @pins }
-      format.js
+   if params[:tag]
+     @pins = Pin.order("created_at desc").page(params[:page]).per_page(1).tagged_with(params[:tag])
+    else
+       @pins = Pin.order("created_at desc").page(params[:page]).per_page(1)
     end
   end
 
@@ -60,9 +58,12 @@ class PinsController < ApplicationController
   # PUT /pins/1.json
   def update
     @pin = current_user.pins.find(params[:id])
+    
+   @pin.description = params[:pin][:description]
+    @pin.tag_list = params[:pin][:tag_list]
 
-    respond_to do |format|
-      if @pin.update_attributes(params[:pin])
+      respond_to do |format|
+      if @pin.save
         format.html { redirect_to @pin, notice: 'Pin was successfully updated.' }
         format.json { head :no_content }
       else

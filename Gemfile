@@ -8,6 +8,7 @@ gem "paperclip", "~> 3.0"
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'acts-as-taggable-on'
 
 group :production do
 	gem'pg'

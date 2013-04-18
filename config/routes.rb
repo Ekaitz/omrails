@@ -1,4 +1,5 @@
 Omrails::Application.routes.draw do
+  get 'tag/:tag', to: 'pins#index', as: :tag
   get "users/show"
 
   resources :pins
