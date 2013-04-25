@@ -5,9 +5,9 @@ class PinsController < ApplicationController
   # GET /pins.json
   def index
    if params[:tag]
-     @pins = Pin.order("created_at desc").page(params[:page]).per_page(1).tagged_with(params[:tag])
+     @pins = Pin.order("created_at desc").page(params[:page]).per_page(4).tagged_with(params[:tag])
     else
-       @pins = Pin.order("created_at desc").page(params[:page]).per_page(1)
+       @pins = Pin.order("created_at desc").page(params[:page]).per_page(4)
     end
   end
 
@@ -15,7 +15,6 @@ class PinsController < ApplicationController
   # GET /pins/1.json
   def show
     @pin = Pin.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @pin }
@@ -58,7 +57,7 @@ class PinsController < ApplicationController
   # PUT /pins/1.json
   def update
     @pin = current_user.pins.find(params[:id])
-    
+
    @pin.description = params[:pin][:description]
     @pin.tag_list = params[:pin][:tag_list]
 

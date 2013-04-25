@@ -6,12 +6,16 @@
         <%= @pin.description %>
       </p>
       <p>
-        <%= @pin.user.name %>
+         Posted by <%= @pin.user.name %>
       </p>
       <% if current_user == @pin.user %>
-      <%= link_to 'Edit', edit_pin_path(@pin) %> |
+
+     <a href="comment_path"><i class="icon-comment"></i> Comment photo </a>
+     <p><a href="#"><i class="icon-thumbs-up"></i>  </a>
+     <a href="#"><i class="icon-thumbs-down"></i>  </a></p>
       <% end %>
-			<%= link_to 'Back', pins_path %>
+      <%= link_to 'Back', pins_path %>
+      <%= link_to 'Comment photo' %>
   
    </div>
   </div>
