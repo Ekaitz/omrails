@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
-  		@users = user.page(params[:page]).per_page(3)
+ 		@users = user.page(params[:page]).per_page(3)
+ 	end
 
   def show
   	@user = User.find(params[:id])
