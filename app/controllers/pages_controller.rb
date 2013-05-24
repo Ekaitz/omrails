@@ -1,9 +1,11 @@
 class PagesController < ApplicationController
   def home
   end
-  def action
+
+  def about
   end
-  def prove
-  end
-   
+
+ def users
+ end
+  
 end

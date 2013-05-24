@@ -9,6 +9,7 @@ gem 'faker'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'acts-as-taggable-on'
+gem 'aws-sdk'
 
 group :production do
 	gem'pg'

@@ -85,3 +85,4 @@ class PinsController < ApplicationController
     end
   end
 end
+
